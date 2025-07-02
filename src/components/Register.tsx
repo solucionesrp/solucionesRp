@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 interface RegisterFormData {
   firstName: string;
@@ -9,6 +9,16 @@ interface RegisterFormData {
   confirmPassword: string;
   phone: string;
   acceptTerms: boolean;
+}
+
+interface FormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
+  phone?: string;
+  acceptTerms?: string;
 }
 
 interface RegisterProps {
@@ -25,13 +35,13 @@ const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
     phone: '',
     acceptTerms: false
   });
-  const [errors, setErrors] = useState<Partial<RegisterFormData>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<RegisterFormData> = {};
+    const newErrors: FormErrors = {};
 
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'El nombre es requerido';
@@ -87,7 +97,7 @@ const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
     }));
     
     // Clear error when user starts typing
-    if (errors[name as keyof RegisterFormData]) {
+    if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
@@ -129,10 +139,10 @@ const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
-  };
+  } as const;
 
   const formVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -142,10 +152,10 @@ const Register: React.FC<RegisterProps> = ({ onSwitchToLogin }) => {
       transition: {
         duration: 0.5,
         delay: 0.2,
-        ease: "easeOut"
+        ease: easeOut
       }
     }
-  };
+  } as const;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center p-4 py-8">
