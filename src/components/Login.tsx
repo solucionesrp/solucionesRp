@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface LoginFormData {
   email: string;
@@ -304,12 +305,22 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
           className="mt-6 text-center text-sm text-gray-400"
         >
           ¿No tienes una cuenta?{' '}
-          <button
-            type="button"
-            className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
-          >
-            Regístrate aquí
-          </button>
+          {isModal ? (
+            <button
+              type="button"
+              onClick={onSwitchToRegister}
+              className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
+            >
+              Regístrate aquí
+            </button>
+          ) : (
+            <Link
+              to="/register"
+              className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
+            >
+              Regístrate aquí
+            </Link>
+          )}
         </motion.p>
       </motion.div>
     );
@@ -532,13 +543,22 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
             className="mt-6 text-center text-sm text-gray-400"
           >
             ¿No tienes una cuenta?{' '}
-            <button
-              type="button"
-              onClick={onSwitchToRegister}
-              className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
-            >
-              Regístrate aquí
-            </button>
+            {isModal ? (
+              <button
+                type="button"
+                onClick={onSwitchToRegister}
+                className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
+              >
+                Regístrate aquí
+              </button>
+            ) : (
+              <Link
+                to="/register"
+                className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
+              >
+                Regístrate aquí
+              </Link>
+            )}
           </motion.p>
         </motion.div>
       </motion.div>
