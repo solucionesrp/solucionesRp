@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .destacado {
+    @apply px-2 py-1 rounded-md font-semibold;
+  }
+  
+  .logo-gradient {
+    @apply font-orbitron font-bold tracking-wider;
+    background: linear-gradient(to right, #FFA726, #29B6F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
