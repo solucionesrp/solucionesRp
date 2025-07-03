@@ -212,13 +212,13 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
             <label className="flex items-center">
               <input
                 type="checkbox"
-                className="w-4 h-4 text-orange-500 bg-white/10 border-white/20 rounded focus:ring-orange-400 focus:ring-2"
+                className="w-4 h-4 text-mostaza bg-white/10 border-white/20 rounded focus:ring-mostaza focus:ring-2"
               />
               <span className="ml-2 text-sm text-gray-300">Recordarme</span>
             </label>
             <button
               type="button"
-              className="text-sm text-orange-400 hover:text-orange-300 transition-colors"
+              className="text-sm text-mostaza hover:text-azul transition-colors"
             >
               ¿Olvidaste tu contraseña?
             </button>
@@ -306,7 +306,7 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
         >
           ¿No tienes una cuenta?{' '}
           {isModal ? (
-            <button
+                        <button
               type="button"
               onClick={onSwitchToRegister}
               className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
@@ -320,7 +320,7 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
             >
               Regístrate aquí
             </Link>
-          )}
+            )}
         </motion.p>
       </motion.div>
     );
@@ -448,18 +448,18 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
               className="flex items-center justify-between"
             >
               <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  className="w-4 h-4 text-orange-500 bg-white/10 border-white/20 rounded focus:ring-orange-400 focus:ring-2"
-                />
-                <span className="ml-2 text-sm text-gray-300">Recordarme</span>
-              </label>
-              <button
-                type="button"
-                className="text-sm text-orange-400 hover:text-orange-300 transition-colors"
-              >
-                ¿Olvidaste tu contraseña?
-              </button>
+                              <input
+                type="checkbox"
+                className="w-4 h-4 text-orange-500 bg-white/10 border-white/20 rounded focus:ring-orange-400 focus:ring-2"
+              />
+              <span className="ml-2 text-sm text-gray-300">Recordarme</span>
+            </label>
+            <button
+              type="button"
+              className="text-sm text-orange-400 hover:text-orange-300 transition-colors"
+            >
+              ¿Olvidaste tu contraseña?
+            </button>
             </motion.div>
 
             {/* Submit Button */}
@@ -535,31 +535,7 @@ const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) =>
             </button>
           </motion.div>
 
-          {/* Sign Up Link */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className="mt-6 text-center text-sm text-gray-400"
-          >
-            ¿No tienes una cuenta?{' '}
-            {isModal ? (
-              <button
-                type="button"
-                onClick={onSwitchToRegister}
-                className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
-              >
-                Regístrate aquí
-              </button>
-            ) : (
-              <Link
-                to="/register"
-                className="font-medium text-orange-400 hover:text-orange-300 transition-colors"
-              >
-                Regístrate aquí
-              </Link>
-            )}
-          </motion.p>
+          
         </motion.div>
       </motion.div>
     </div>

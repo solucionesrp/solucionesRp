@@ -8,9 +8,9 @@ const AuthNavigator: React.FC = () => {
   return (
     <div>
       {currentView === 'login' ? (
-        <Login />
+        <Login onSwitchToRegister={() => setCurrentView('register')} />
       ) : (
-        <Register />
+        <Register onSwitchToLogin={() => setCurrentView('login')} />
       )}
       
       {/* Floating Navigation Button */}

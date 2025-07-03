@@ -1,54 +1,162 @@
-# React + TypeScript + Vite
+# Soluciones RP - Sitio Web Profesional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web moderno y responsivo para Soluciones RP, una empresa de servicios técnicos y desarrollo web. El proyecto incluye un sistema de autenticación con modales, navegación responsiva y una interfaz de usuario moderna.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- **React 19.1.0** - Biblioteca de JavaScript para construir interfaces de usuario
+- **TypeScript 5.8.3** - Superset de JavaScript con tipado estático
+- **Vite 6.3.5** - Herramienta de construcción rápida para desarrollo moderno
 
-## Expanding the ESLint configuration
+### Estilos y UI
+- **Tailwind CSS 3.4.17** - Framework CSS utility-first para diseño responsivo
+- **PostCSS 8.5.6** - Herramienta para transformar CSS con JavaScript
+- **Autoprefixer 10.4.21** - Plugin PostCSS para agregar prefijos de navegador automáticamente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Animaciones y Componentes
+- **Framer Motion 12.18.1** - Biblioteca de animaciones para React
+- **React Icons 5.5.0** - Biblioteca de íconos populares para React
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Enrutamiento
+- **React Router DOM 7.6.3** - Enrutamiento declarativo para React
+
+### Herramientas de Desarrollo
+- **ESLint 9.25.0** - Linter para identificar y corregir problemas en el código
+- **TypeScript ESLint 8.30.1** - Reglas de ESLint específicas para TypeScript
+
+## 📋 Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+- **Node.js** (versión 18.0.0 o superior)
+- **npm** (versión 8.0.0 o superior) o **yarn**
+
+Para verificar las versiones instaladas:
+```bash
+node --version
+npm --version
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Instalación
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clona el repositorio**
+   ```bash
+   git clone git@github.com:solucionesrp/solucionesRp.git
+   cd solucionesRp
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Instala las dependencias**
+   ```bash
+   npm install
+   ```
+
+## 🚀 Comandos Disponibles
+
+### Desarrollo
+```bash
+npm run dev
 ```
+Inicia el servidor de desarrollo en `http://localhost:5173` con hot reload.
+
+### Construcción
+```bash
+npm run build
+```
+Construye la aplicación para producción en la carpeta `dist/`.
+
+### Vista Previa de Producción
+```bash
+npm run preview
+```
+Sirve la versión de producción localmente para pruebas.
+
+### Linting
+```bash
+npm run lint
+```
+Ejecuta ESLint para verificar la calidad del código.
+
+## 📁 Estructura del Proyecto
+
+```
+solucionesRPV2/
+├── public/                 # Archivos estáticos
+│   └── images/            # Imágenes del proyecto
+├── src/
+│   ├── components/        # Componentes React reutilizables
+│   ├── hooks/            # Custom hooks
+│   ├── pages/            # Páginas de la aplicación
+│   └── main.tsx          # Punto de entrada
+├── package.json          # Dependencias y scripts
+├── tailwind.config.js    # Configuración de Tailwind CSS
+├── vite.config.ts        # Configuración de Vite
+└── tsconfig.json         # Configuración de TypeScript
+```
+
+## ⚙️ Configuraciones Especiales
+
+### TypeScript
+- El proyecto utiliza TypeScript con configuración estricta
+- Configuración específica para React y Vite
+
+### Tailwind CSS
+- Configuración personalizada con colores de marca
+- Utiliza PostCSS y Autoprefixer automáticamente
+
+### ESLint
+- Configuración moderna con reglas para React y TypeScript
+- Incluye plugins para hooks y refresh de React
+
+## 🎨 Características del Proyecto
+
+- **Diseño Responsivo**: Adaptable a dispositivos móviles, tablets y desktop
+- **Sistema de Autenticación**: Modales de login y registro con validación
+- **Navegación Inteligente**: Menú hamburguesa para móviles, dropdown para desktop
+- **Animaciones Suaves**: Transiciones y micro-interacciones con Framer Motion
+- **Optimización SEO**: Meta tags y estructura semántica
+- **Accesibilidad**: Navegación por teclado y lectores de pantalla
+
+## 🔧 Scripts Personalizados
+
+### Build con TypeScript
+El comando `npm run build` ejecuta:
+1. `tsc -b` - Compilación de TypeScript
+2. `vite build` - Construcción optimizada para producción
+
+### Linting Avanzado
+El comando `npm run lint` incluye:
+- Reglas específicas para React Hooks
+- Validación de TypeScript
+- Reglas de refresh para desarrollo
+
+## 🚨 Advertencias Importantes
+
+1. **Versiones de React**: El proyecto utiliza React 19, asegúrate de que todas las dependencias sean compatibles.
+
+2. **TypeScript Estricto**: El proyecto tiene configuraciones estrictas de TypeScript. Asegúrate de tipar correctamente todos los componentes.
+
+3. **Dependencias de Desarrollo**: Algunas dependencias como `@types/react-router-dom` están en versiones específicas para compatibilidad.
+
+4. **Configuración de Vite**: El proyecto utiliza Vite con configuración personalizada para React y TypeScript.
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Licencia: Solo uso personal o privado. No redistribuir sin permiso de Soluciones RP.
+
+
+## 📞 Contacto
+
+Para más información sobre el proyecto, contacta a Soluciones RP.
+solucionesrp.info@gmail.com
+---
+
+**Desarrollado con ❤️ usando React, TypeScript y Tailwind CSS**
