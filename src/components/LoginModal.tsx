@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { IoMail, IoLockClosed, IoPerson } from 'react-icons/io5';
+import { IoMail, IoLockClosed } from 'react-icons/io5';
 import { FaGoogle, FaTwitter } from 'react-icons/fa';
 import Modal from './Modal';
 import InputField from './InputField';
