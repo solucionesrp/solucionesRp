@@ -1,12 +1,10 @@
 import React from 'react';
 import { FaBell } from 'react-icons/fa';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import UserDropdown from './UserDropdown';
 
 const UserNavbar: React.FC = () => {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
+  const { user } = useAuth();
   const displayUser = user || { name: 'Ana', email: 'ana@solucionesrp.com' };
   return (
     <nav className="md:ml-64 bg-gray-900/30 backdrop-blur-md text-white shadow-lg border-b border-gray-800/50 sticky top-0 z-30">

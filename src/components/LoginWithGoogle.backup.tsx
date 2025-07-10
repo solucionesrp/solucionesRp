@@ -59,7 +59,7 @@ const LoginWithGoogle: React.FC<LoginWithGoogleProps> = ({
     <div className={`flex justify-center ${className}`}>
       <GoogleLogin
         onSuccess={handleSuccess}
-        onError={handleError}
+        onError={() => handleError(undefined)}
         useOneTap
         theme="filled_blue"
         size="large"

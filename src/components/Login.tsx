@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LoginWithGoogle from './LoginWithGoogle';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -11,10 +11,9 @@ interface LoginFormData {
 
 interface LoginProps {
   isModal?: boolean;
-  onSwitchToRegister?: () => void;
 }
 
-const Login: React.FC<LoginProps> = ({ isModal = false, onSwitchToRegister }) => {
+const Login: React.FC<LoginProps> = ({ isModal = false }) => {
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: ''

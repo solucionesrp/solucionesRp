@@ -8,7 +8,7 @@ const AuthNavigator: React.FC = () => {
   return (
     <div>
       {currentView === 'login' ? (
-        <Login onSwitchToRegister={() => setCurrentView('register')} />
+        <Login />
       ) : (
         <Register onSwitchToLogin={() => setCurrentView('login')} />
       )}
