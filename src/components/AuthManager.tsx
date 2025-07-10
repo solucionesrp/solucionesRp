@@ -1,37 +1,27 @@
 import React, { useState } from 'react';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
+import { useAuth } from '../contexts/AuthContext';
 
 interface AuthManagerProps {
   children: React.ReactNode;
 }
 
-export const AuthContext = React.createContext<{
-  openLogin: () => void;
-  openRegister: () => void;
-  closeAuth: () => void;
-}>({
-  openLogin: () => {},
-  openRegister: () => {},
-  closeAuth: () => {},
-});
-
 const AuthManager: React.FC<AuthManagerProps> = ({ children }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
 
-  const openLogin = () => {
-    setShowLoginModal(true);
-  };
+  // Sincronizar con el contexto de autenticación
+  React.useEffect(() => {
+    const handleOpenLogin = () => setShowLoginModal(true);
+    const handleOpenRegister = () => setShowRegisterModal(true);
+    const handleCloseAuth = () => {
+      setShowLoginModal(false);
+      setShowRegisterModal(false);
+    };
 
-  const openRegister = () => {
-    setShowRegisterModal(true);
-  };
-
-  const closeAuth = () => {
-    setShowLoginModal(false);
-    setShowRegisterModal(false);
-  };
+    // Aquí podrías conectar con el contexto si es necesario
+  }, []);
 
   const handleSwitchToRegister = () => {
     setShowLoginModal(false);
@@ -52,7 +42,7 @@ const AuthManager: React.FC<AuthManagerProps> = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ openLogin, openRegister, closeAuth }}>
+    <>
       {children}
       
       {/* Modals */}
@@ -67,7 +57,7 @@ const AuthManager: React.FC<AuthManagerProps> = ({ children }) => {
         onClose={handleCloseRegisterModal}
         onSwitchToLogin={handleSwitchToLogin}
       />
-    </AuthContext.Provider>
+    </>
   );
 };
 

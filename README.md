@@ -21,6 +21,10 @@ Sitio web moderno y responsivo para Soluciones RP, una empresa de servicios téc
 ### Enrutamiento
 - **React Router DOM 7.6.3** - Enrutamiento declarativo para React
 
+### Autenticación
+- **@react-oauth/google** - Integración con Google OAuth 2.0 para autenticación
+- **jwt-decode** - Decodificación de tokens JWT en el frontend (prueba temporal)
+
 ### Herramientas de Desarrollo
 - **ESLint 9.25.0** - Linter para identificar y corregir problemas en el código
 - **TypeScript ESLint 8.30.1** - Reglas de ESLint específicas para TypeScript
@@ -96,6 +100,24 @@ solucionesRPV2/
 
 ## ⚙️ Configuraciones Especiales
 
+### Variables de Entorno
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+
+```bash
+# Google OAuth Configuration
+VITE_GOOGLE_CLIENT_ID=your_google_client_id_here
+```
+
+#### Configuración de Google OAuth:
+1. Ve a [Google Cloud Console](https://console.cloud.google.com/)
+2. Crea un proyecto o selecciona uno existente
+3. Habilita la API de Google+ 
+4. Ve a "Credenciales" > "Crear credenciales" > "ID de cliente de OAuth 2.0"
+5. Configura los URIs de redirección autorizados:
+   - `https://solucionesrp.vercel.app/login/google/callback`
+   - `http://localhost:5173` (para desarrollo)
+6. Copia el Client ID y pégalo en `VITE_GOOGLE_CLIENT_ID`
+
 ### TypeScript
 - El proyecto utiliza TypeScript con configuración estricta
 - Configuración específica para React y Vite
@@ -131,6 +153,13 @@ El comando `npm run lint` incluye:
 - Reglas de refresh para desarrollo
 
 ## 🚨 Advertencias Importantes
+
+### 🧪 PRUEBA TEMPORAL - GOOGLE OAUTH
+**IMPORTANTE**: El componente `LoginWithGoogle.tsx` está actualmente en modo de prueba temporal. 
+- Usa `jwt-decode` para decodificar tokens en el frontend
+- Muestra los datos del usuario (nombre, email, foto) directamente
+- **NO** está conectado a backend
+- Para revertir: reemplazar `LoginWithGoogle.tsx` con el contenido de `LoginWithGoogle.backup.tsx`
 
 1. **Versiones de React**: El proyecto utiliza React 19, asegúrate de que todas las dependencias sean compatibles.
 

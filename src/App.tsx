@@ -1,21 +1,47 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import { AuthProvider } from './contexts/AuthContext';
+import Layout from './components/Layout';
+import PrivateRoute from './components/PrivateRoute';
+import MyRepairsPage from './pages/MyRepairsPage';
+import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import AuthManager from './components/AuthManager';
+import HomePage from './pages/HomePage';
+import AuthModals from './components/AuthModals';
 
 function App() {
   return (
-    <AuthManager>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
-      </Router>
-    </AuthManager>
+    <Router>
+      <AuthProvider>
+        <AuthManager>
+          <Routes>
+            {/* Rutas públicas */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            {/* Rutas protegidas */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/reparaciones" element={
+              <PrivateRoute>
+                <Layout>
+                  <MyRepairsPage />
+                </Layout>
+              </PrivateRoute>
+            } />
+            <Route path="/dashboard" element={
+              <PrivateRoute>
+                <Layout>
+                  <DashboardPage />
+                </Layout>
+              </PrivateRoute>
+            } />
+          </Routes>
+          {/* Modales de autenticación */}
+          <AuthModals />
+        </AuthManager>
+      </AuthProvider>
+    </Router>
   );
 }
 

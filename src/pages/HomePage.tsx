@@ -22,6 +22,18 @@ const HomePage: React.FC = () => {
       <div className="relative z-10">
         <Navbar />
         <main>
+          <section className="pt-24 pb-12 flex justify-center">
+            <div className="bg-gray-900/80 rounded-2xl shadow-2xl px-3 py-8 max-w-xs md:max-w-2xl lg:max-w-4xl w-full text-center border border-gray-800 md:px-8 md:py-16">
+              <h1 className="font-orbitron text-4xl md:text-5xl font-bold mb-4 text-center">
+                <span className="bg-gradient-to-r from-mostaza to-azul bg-clip-text text-transparent">Soluciones</span>{" "}
+                <span className="text-azul">RP</span>
+              </h1>
+              <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+                <span className="font-bold">¿Tienes una idea o un problema técnico?</span> <span className="font-bold">Lo solucionamos.</span>
+                <span className="text-azul"> Desarrollamos tus aplicaciones web</span> y también <span className="text-mostaza">móvil o reparar tu equipo</span>. <span className="font-bold">Une lo digital con lo técnico</span> para ayudarte mejor.
+              </p>
+            </div>
+          </section>
           <ServicesSection />
           <ServicesDetailedSection />
           <TechnologiesSection />

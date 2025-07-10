@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import UserDropdown from './UserDropdown';
 import MobileMenu from './MobileMenu';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -62,11 +63,18 @@ const Navbar: React.FC = () => {
 
             {/* Right Section */}
             <div className="flex items-center space-x-3">
+              {/* Botón Zona de Usuario siempre visible */}
+              <button
+                onClick={() => window.location.href = '/reparaciones'}
+                className="hidden md:inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold shadow transition-all duration-300"
+                style={{ marginRight: '0.5rem' }}
+              >
+                Zona de Usuario
+              </button>
               {/* Desktop User Dropdown */}
               <div className="hidden md:block">
                 <UserDropdown />
               </div>
-
               {/* Mobile Menu Button */}
               <motion.button
                 onClick={handleMobileMenuToggle}
@@ -86,6 +94,7 @@ const Navbar: React.FC = () => {
       <MobileMenu 
         isOpen={isMobileMenuOpen}
         onClose={handleMobileMenuClose}
+        items={menuItems.map(item => ({ ...item, icon: null }))}
       />
     </>
   );

@@ -4,6 +4,7 @@ import { IoMail, IoLockClosed, IoPerson } from 'react-icons/io5';
 import { FaGoogle, FaTwitter } from 'react-icons/fa';
 import Modal from './Modal';
 import InputField from './InputField';
+import LoginWithGoogle from './LoginWithGoogle';
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -239,24 +240,10 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onClose, onSwitch
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.5 }}
-          className="grid grid-cols-2 gap-3"
+          transition={{ duration: 0.5, delay: 0.9 }}
+          className="mt-6 flex flex-col items-center w-full"
         >
-          <button
-            type="button"
-            className="w-full inline-flex justify-center items-center py-2 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 text-sm font-medium text-gray-300 hover:bg-white/20 transition-all duration-300"
-          >
-            <FaGoogle className="w-4 h-4 mr-2" />
-            Google
-          </button>
-
-          <button
-            type="button"
-            className="w-full inline-flex justify-center items-center py-2 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 text-sm font-medium text-gray-300 hover:bg-white/20 transition-all duration-300"
-          >
-            <FaTwitter className="w-4 h-4 mr-2" />
-            Twitter
-          </button>
+          <LoginWithGoogle />
         </motion.div>
 
         {/* Login Link */}
