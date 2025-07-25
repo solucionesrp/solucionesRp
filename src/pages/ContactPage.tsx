@@ -126,7 +126,7 @@ const ContactPage: React.FC = () => {
       console.log('Variables enviadas a EmailJS:', templateParams);
 
       // Enviar email usando EmailJS
-      const result = await emailjs.send(
+       const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
         templateParams,
