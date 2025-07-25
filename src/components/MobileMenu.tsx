@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaTimes, FaSignOutAlt } from 'react-icons/fa';
-import { useAuth } from '../contexts/AuthContext';
+import { FaTimes } from 'react-icons/fa';
+// import { useAuth } from '../contexts/AuthContext';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -11,8 +11,8 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
   const location = useLocation();
-  const { user, isAuthenticated, logout, openLogin, openRegister } = useAuth();
-  const displayUser = user || { name: 'Ana', email: 'ana@solucionesrp.com' };
+  // const { user, isAuthenticated, logout, openLogin, openRegister } = useAuth();
+  // const displayUser = user || { name: 'Ana', email: 'ana@solucionesrp.com' };
 
   return (
     <div

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
-import UserDropdown from './UserDropdown';
+// import UserDropdown from './UserDropdown';
 import MobileMenu from './MobileMenu';
 
 const Navbar: React.FC = () => {

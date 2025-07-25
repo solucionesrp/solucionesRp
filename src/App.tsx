@@ -1,10 +1,10 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
-import Layout from './components/Layout';
-import PrivateRoute from './components/PrivateRoute';
-import MyRepairsPage from './pages/MyRepairsPage';
-import DashboardPage from './pages/DashboardPage';
+// import Layout from './components/Layout';
+// import PrivateRoute from './components/PrivateRoute';
+// import MyRepairsPage from './pages/MyRepairsPage';
+// import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ContactPage from './pages/ContactPage';
@@ -12,7 +12,7 @@ import ServicioTecnicoPCPage from './pages/ServicioTecnicoPCPage';
 import ReparacionesElectronicasPage from './pages/ReparacionesElectronicasPage';
 import AuthManager from './components/AuthManager';
 import HomePage from './pages/HomePage';
-import AuthModals from './components/AuthModals';
+// import AuthModals from './components/AuthModals';
 
 function App() {
   return (

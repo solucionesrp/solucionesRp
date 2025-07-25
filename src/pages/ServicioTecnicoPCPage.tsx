@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTools, FaLaptop, FaDesktop, FaHdd, FaMemory, FaDownload, FaShieldAlt, FaWhatsapp, FaArrowLeft } from 'react-icons/fa';
+import { FaTools, FaDesktop, FaHdd, FaMemory, FaDownload, FaShieldAlt, FaWhatsapp, FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
