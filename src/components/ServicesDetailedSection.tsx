@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 interface ServiceDetailCardProps {
   title: string;
@@ -18,6 +19,15 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
   icon, 
   buttonColor 
 }) => {
+  const navigate = useNavigate();
+
+  const handleMoreInfo = () => {
+    if (title === "Electrónica y Servicio Técnico") {
+      navigate('/servicio-tecnico-pc');
+    }
+    // Para otros servicios, se puede agregar más lógica aquí
+  };
+
   return (
     <div className="bg-gray-800/40 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-xl shadow-lg min-h-[500px] flex flex-col">
       <div className="text-4xl mb-6 text-center text-purple-300 group-hover:text-purple-200 transition-colors duration-300">
@@ -38,7 +48,10 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
         <p className="text-sm text-gray-400 mb-4">{features}</p>
       </div>
       
-      <button className={`w-full py-3 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonColor} mt-auto shadow-lg hover:shadow-xl`}>
+      <button 
+        onClick={handleMoreInfo}
+        className={`w-full py-3 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonColor} mt-auto shadow-lg hover:shadow-xl`}
+      >
         Más información
       </button>
     </div>

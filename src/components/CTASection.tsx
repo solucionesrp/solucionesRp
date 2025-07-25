@@ -1,7 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const CTASection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/contacto');
+  };
+
+  // const handleUserZoneClick = () => {
+  //   navigate('/reparaciones');
+  // };
+
   return (
     <section className="py-20 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -42,6 +53,7 @@ const CTASection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <motion.button 
+            onClick={handleContactClick}
             className="bg-mostaza/80 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-mostaza/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 min-w-[200px]"
             whileHover={{ 
               scale: 1.05,
@@ -56,6 +68,7 @@ const CTASection: React.FC = () => {
           </motion.button>
           
           <motion.button 
+            onClick={handleContactClick}
             className="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-gray-600 hover:border-gray-500 min-w-[200px]"
             whileHover={{ 
               scale: 1.05,

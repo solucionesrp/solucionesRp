@@ -7,6 +7,9 @@ import MyRepairsPage from './pages/MyRepairsPage';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import ContactPage from './pages/ContactPage';
+import ServicioTecnicoPCPage from './pages/ServicioTecnicoPCPage';
+import ReparacionesElectronicasPage from './pages/ReparacionesElectronicasPage';
 import AuthManager from './components/AuthManager';
 import HomePage from './pages/HomePage';
 import AuthModals from './components/AuthModals';
@@ -20,8 +23,12 @@ function App() {
             {/* Rutas públicas */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            {/* Rutas protegidas */}
+            <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/servicio-tecnico-pc" element={<ServicioTecnicoPCPage />} />
+            <Route path="/reparaciones-electronicas" element={<ReparacionesElectronicasPage />} />
+            {/* Rutas protegidas - Ocultas hasta tener BD */}
             <Route path="/" element={<HomePage />} />
+            {/* 
             <Route path="/reparaciones" element={
               <PrivateRoute>
                 <Layout>
@@ -36,9 +43,10 @@ function App() {
                 </Layout>
               </PrivateRoute>
             } />
+            */}
           </Routes>
-          {/* Modales de autenticación */}
-          <AuthModals />
+                      {/* Modales de autenticación - Ocultos hasta tener BD */}
+            {/* <AuthModals /> */}
         </AuthManager>
       </AuthProvider>
     </Router>

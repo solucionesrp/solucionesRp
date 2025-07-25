@@ -28,7 +28,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
           <FaTimes className="w-6 h-6" />
         </button>
       </div>
-      {/* Usuario info o login/register */}
+      {/* Usuario info o login/register - OCULTO PARA PRIMERA ETAPA */}
+      {/*
       {isAuthenticated ? (
         <div className="px-4 pt-4 pb-2 flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center font-bold text-white text-lg">
@@ -55,6 +56,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
           </button>
         </div>
       )}
+      */}
       <nav className="flex flex-col gap-1 px-4 py-6">
         {items.map((item) => (
           <Link
@@ -71,6 +73,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
           </Link>
         ))}
       </nav>
+      {/* Zona de Usuario - OCULTO PARA PRIMERA ETAPA */}
+      {/*
       <div className="px-4 pt-2 flex flex-col gap-3">
         <button
           onClick={() => { onClose(); window.location.href = '/reparaciones'; }}
@@ -79,7 +83,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
           Zona de Usuario
         </button>
       </div>
+      */}
       <div className="px-4 pb-6 mt-auto flex flex-col gap-3">
+        {/* Cerrar sesión - OCULTO PARA PRIMERA ETAPA */}
+        {/*
         {isAuthenticated ? (
           <button
             onClick={() => { onClose(); logout(); }}
@@ -89,6 +96,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, items }) => {
             Cerrar sesión
           </button>
         ) : null}
+        */}
         <div className="bg-gray-800/80 rounded-xl p-4 text-gray-300 text-sm text-center border border-gray-700/60">
           <div className="font-semibold mb-1">Oferta Exclusiva</div>
           15% de descuento en tu próxima reparación con el código: <span className="text-purple-400 font-bold">NEXT15</span>

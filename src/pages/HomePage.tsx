@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
           <CTASection />
         </main>
         <Footer />
-        <WhatsAppButton phoneNumber="+1234567890" />
+        <WhatsAppButton phoneNumber="+56993888939" />
       </div>
     </div>
   );

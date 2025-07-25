@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import UserDropdown from './UserDropdown';
 import MobileMenu from './MobileMenu';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,11 +17,18 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleMenuClick = (href: string) => {
+    if (href.startsWith('/')) {
+      navigate(href);
+    }
+    // Si es un enlace interno (#), el comportamiento por defecto funcionará
+  };
+
   const menuItems = [
-    { href: '#servicios-tecnicos', label: 'Servicio Técnico PC' },
-    { href: '#reparaciones', label: 'Reparaciones Electrónicas' },
-    { href: '#paginas-web', label: 'Páginas Web' },
-    { href: '#apps-moviles', label: 'Aplicaciones Móviles' },
+    { href: '/servicio-tecnico-pc', label: 'Servicio Técnico PC' },
+    { href: '/reparaciones-electronicas', label: 'Reparaciones Electrónicas' },
+    // { href: '#paginas-web', label: 'Páginas Web' }, // Oculto para primera etapa
+    // { href: '#apps-moviles', label: 'Aplicaciones Móviles' }, // Oculto para primera etapa
   ];
 
   return (
@@ -52,6 +60,12 @@ const Navbar: React.FC = () => {
                   <a
                     key={item.href}
                     href={item.href}
+                    onClick={(e) => {
+                      if (item.href.startsWith('/')) {
+                        e.preventDefault();
+                        handleMenuClick(item.href);
+                      }
+                    }}
                     className="text-gray-300 hover:bg-gray-700/50 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300"
                   >
                     {item.label}
@@ -62,18 +76,18 @@ const Navbar: React.FC = () => {
 
             {/* Right Section */}
             <div className="flex items-center space-x-3">
-              {/* Botón Zona de Usuario siempre visible */}
+              {/* Botón Contacto siempre visible */}
               <button
-                onClick={() => window.location.href = '/reparaciones'}
+                onClick={() => window.location.href = '/contacto'}
                 className="hidden md:inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold shadow transition-all duration-300"
                 style={{ marginRight: '0.5rem' }}
               >
-                Zona de Usuario
+                Contacto
               </button>
-              {/* Desktop User Dropdown */}
-              <div className="hidden md:block">
+              {/* Desktop User Dropdown - Oculto hasta tener BD */}
+              {/* <div className="hidden md:block">
                 <UserDropdown />
-              </div>
+              </div> */}
               {/* Mobile Menu Button */}
               <motion.button
                 onClick={handleMobileMenuToggle}

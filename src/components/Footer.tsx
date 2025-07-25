@@ -70,14 +70,14 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <span className="text-azul mr-2">📧</span>
-                <a href="mailto:contacto@solucionesrp.com" className="text-gray-300 hover:text-azul transition-colors duration-300">
-                  contacto@solucionesrp.com
+                <a href="/contacto" className="text-gray-300 hover:text-azul transition-colors duration-300">
+                  solucionesrp.info@gmail.com
                 </a>
               </div>
               <div className="flex items-center">
                 <span className="text-azul mr-2">📞</span>
-                <a href="tel:+56912345678" className="text-gray-300 hover:text-azul transition-colors duration-300">
-                  +56 9 1234 5678
+                <a href="tel:+56993888939" className="text-gray-300 hover:text-azul transition-colors duration-300">
+                  +56 9 9388 8939
                 </a>
               </div>
               <div className="flex items-center">
