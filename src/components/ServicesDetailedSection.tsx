@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 interface ServiceDetailCardProps {
   title: string;
@@ -24,6 +25,10 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
   const handleMoreInfo = () => {
     if (title === "Electrónica y Servicio Técnico") {
       navigate('/servicio-tecnico-pc');
+    } else if (title === "Apps Móviles") {
+      navigate('/apps-moviles');
+    } else if (title === "Desarrollo Web") {
+      navigate('/paginas-web');
     }
     // Para otros servicios, se puede agregar más lógica aquí
   };
@@ -50,7 +55,7 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
       
       <button 
         onClick={handleMoreInfo}
-        className={`w-full py-3 px-4 rounded-lg font-medium transition-colors duration-300 ${buttonColor} mt-auto shadow-lg hover:shadow-xl`}
+        className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 ${buttonColor} mt-auto shadow-lg hover:shadow-xl active:scale-95`}
       >
         Más información
       </button>
@@ -59,6 +64,7 @@ const ServiceDetailCard: React.FC<ServiceDetailCardProps> = ({
 };
 
 const ServicesDetailedSection: React.FC = () => {
+  const isMobile = useIsMobile();
   const services = [
     {
       title: "Desarrollo Web",
@@ -91,20 +97,20 @@ const ServicesDetailedSection: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
+        staggerChildren: isMobile ? 0.05 : 0.1,
+        delayChildren: isMobile ? 0.02 : 0.05
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, x: 100, scale: 0.9 },
+    hidden: { opacity: 0, x: isMobile ? 10 : 50, scale: 0.98 },
     visible: {
       opacity: 1,
       x: 0,
       scale: 1,
       transition: {
-        duration: 0.6
+        duration: isMobile ? 0.25 : 0.4
       }
     }
   };
@@ -139,9 +145,9 @@ const ServicesDetailedSection: React.FC = () => {
               key={index}
               variants={cardVariants}
               whileHover={{ 
-                scale: 1.03,
-                y: -5,
-                transition: { duration: 0.2 }
+                scale: isMobile ? 1.01 : 1.03,
+                y: isMobile ? -2 : -5,
+                transition: { duration: isMobile ? 0.1 : 0.2 }
               }}
             >
               <ServiceDetailCard

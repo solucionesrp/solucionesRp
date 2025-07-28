@@ -25,12 +25,12 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Servicios</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#desarrollo-web" className="text-gray-300 hover:text-mostaza transition-colors duration-300">
+                <a href="/paginas-web" className="text-gray-300 hover:text-mostaza transition-colors duration-300">
                   Desarrollo Web
                 </a>
               </li>
               <li>
-                <a href="#apps-moviles" className="text-gray-300 hover:text-mostaza transition-colors duration-300">
+                <a href="/apps-moviles" className="text-gray-300 hover:text-mostaza transition-colors duration-300">
                   Apps Móviles
                 </a>
               </li>
@@ -52,12 +52,12 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Empresa</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#sobre-nosotros" className="text-gray-300 hover:text-azul transition-colors duration-300">
+                <a href="/sobre-nosotros" className="text-gray-300 hover:text-azul transition-colors duration-300">
                   Sobre Nosotros
                 </a>
               </li>
               <li>
-                <a href="#contacto" className="text-gray-300 hover:text-azul transition-colors duration-300">
+                <a href="/contacto" className="text-gray-300 hover:text-azul transition-colors duration-300">
                   Contacto
                 </a>
               </li>
