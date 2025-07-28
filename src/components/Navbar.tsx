@@ -27,8 +27,8 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { href: '/servicio-tecnico-pc', label: 'Servicio Técnico PC' },
     { href: '/reparaciones-electronicas', label: 'Reparaciones Electrónicas' },
+    { href: '/apps-moviles', label: 'Aplicaciones Móviles' },
     // { href: '#paginas-web', label: 'Páginas Web' }, // Oculto para primera etapa
-    // { href: '#apps-moviles', label: 'Aplicaciones Móviles' }, // Oculto para primera etapa
   ];
 
   return (

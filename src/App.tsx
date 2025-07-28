@@ -10,6 +10,7 @@ import RegisterPage from './pages/RegisterPage';
 import ContactPage from './pages/ContactPage';
 import ServicioTecnicoPCPage from './pages/ServicioTecnicoPCPage';
 import ReparacionesElectronicasPage from './pages/ReparacionesElectronicasPage';
+import AppMovilPage from './pages/AppMovilPage';
 import AuthManager from './components/AuthManager';
 import HomePage from './pages/HomePage';
 // import AuthModals from './components/AuthModals';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/contacto" element={<ContactPage />} />
             <Route path="/servicio-tecnico-pc" element={<ServicioTecnicoPCPage />} />
             <Route path="/reparaciones-electronicas" element={<ReparacionesElectronicasPage />} />
+            <Route path="/apps-moviles" element={<AppMovilPage />} />
             {/* Rutas protegidas - Ocultas hasta tener BD */}
             <Route path="/" element={<HomePage />} />
             {/* 
