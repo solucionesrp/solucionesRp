@@ -12,7 +12,6 @@ interface ServiceData {
   description: string;
   icon: React.ReactNode;
   features: string[];
-  price?: string;
 }
 
 const ServicioTecnicoPCPage: React.FC = () => {
@@ -30,8 +29,7 @@ const ServicioTecnicoPCPage: React.FC = () => {
         'Instalación de drivers actualizados',
         'Configuración básica del sistema',
         'Respaldo de datos importantes (opcional)'
-      ],
-      price: 'Desde $25.000'
+      ]
     },
     {
       id: 'software',
@@ -44,8 +42,7 @@ const ServicioTecnicoPCPage: React.FC = () => {
         'Antivirus y software de seguridad',
         'Programas especializados',
         'Configuración y activación'
-      ],
-      price: 'Desde $15.000'
+      ]
     },
     {
       id: 'hardware',
@@ -58,8 +55,7 @@ const ServicioTecnicoPCPage: React.FC = () => {
         'Cambio de fuente de poder',
         'Reparación de pantalla',
         'Reemplazo de componentes'
-      ],
-      price: 'Desde $30.000'
+      ]
     },
     {
       id: 'limpieza',
@@ -72,8 +68,7 @@ const ServicioTecnicoPCPage: React.FC = () => {
         'Cambio de pasta térmica',
         'Limpieza externa del equipo',
         'Optimización del sistema'
-      ],
-      price: 'Desde $20.000'
+      ]
     },
     {
       id: 'upgrade',
@@ -86,8 +81,7 @@ const ServicioTecnicoPCPage: React.FC = () => {
         'Upgrade de procesador',
         'Instalación de tarjeta gráfica',
         'Optimización del sistema'
-      ],
-      price: 'Desde $35.000'
+      ]
     },
     {
       id: 'recuperacion',
@@ -100,8 +94,7 @@ const ServicioTecnicoPCPage: React.FC = () => {
         'Recuperación de discos dañados',
         'Recuperación de fotos y videos',
         'Respaldo de datos recuperados'
-      ],
-      price: 'Desde $40.000'
+      ]
     }
   ];
 
@@ -193,11 +186,6 @@ const ServicioTecnicoPCPage: React.FC = () => {
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
                     <p className="text-gray-300 text-sm mb-4">{service.description}</p>
-                    {service.price && (
-                      <div className="text-mostaza font-semibold text-lg mb-4">
-                        {service.price}
-                      </div>
-                    )}
                   </div>
 
                   <div className="mb-6">

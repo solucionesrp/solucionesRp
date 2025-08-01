@@ -16,7 +16,7 @@ Checklist
 Miembros
 Descripción
 Editar
-Pantalla donde se ofrece el servicio de reparación de equipos electrónicos como notebooks, celulares, tablets, impresoras, etc. El usuario puede conocer el servicio, ver precios aproximados y solicitar una cita.
+Pantalla donde se ofrece el servicio de reparación de equipos electrónicos como notebooks, celulares, tablets, impresoras, etc. El usuario puede conocer el servicio y solicitar una cita.
 
 Checklist
 Eliminar
@@ -24,8 +24,6 @@ Eliminar
 ✅ Crear sección con descripción del servicio de reparación
 
 ✅ Listar tipos de dispositivos que se reparan (notebook, celular, tablet, televisores, consolas, equipo electronicos)
-
-✅ Mostrar precios base o estimados por tipo de equipo
 
 ✅ Incluir galería de imágenes de trabajos realizados (antes/después)
 
@@ -41,4 +39,4 @@ Eliminar
 
 ✅ Activar notificación interna al recibir nueva solicitud
 
-✅ Optimizar para móvil
+✅ Optimizar para  móvil

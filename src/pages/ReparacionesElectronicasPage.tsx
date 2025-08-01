@@ -12,7 +12,6 @@ interface DeviceData {
   description: string;
   icon: React.ReactNode;
   commonIssues: string[];
-  basePrice: string;
   image?: string;
 }
 
@@ -44,48 +43,42 @@ const ReparacionesElectronicasPage: React.FC = () => {
       name: 'Notebooks',
       description: 'Reparación y mantenimiento de laptops y notebooks de todas las marcas.',
       icon: <FaLaptop className="w-8 h-8" />,
-      commonIssues: ['Pantalla rota', 'No enciende', 'Batería defectuosa', 'Teclado dañado', 'Problemas de carga'],
-      basePrice: 'Desde $30.000'
+      commonIssues: ['Pantalla rota', 'No enciende', 'Batería defectuosa', 'Teclado dañado', 'Problemas de carga']
     },
     {
       id: 'celular',
       name: 'Celulares',
       description: 'Reparación de smartphones Android e iPhone.',
       icon: <FaMobile className="w-8 h-8" />,
-      commonIssues: ['Pantalla rota', 'Batería hinchada', 'No carga', 'Problemas de audio', 'Cámara defectuosa'],
-      basePrice: 'Desde $25.000'
+      commonIssues: ['Pantalla rota', 'Batería hinchada', 'No carga', 'Problemas de audio', 'Cámara defectuosa']
     },
     {
       id: 'tablet',
       name: 'Tablets',
       description: 'Reparación de tablets iPad y Android.',
       icon: <FaTablet className="w-8 h-8" />,
-      commonIssues: ['Pantalla rota', 'No enciende', 'Problemas de carga', 'Botones defectuosos', 'Conexión WiFi'],
-      basePrice: 'Desde $35.000'
+      commonIssues: ['Pantalla rota', 'No enciende', 'Problemas de carga', 'Botones defectuosos', 'Conexión WiFi']
     },
     {
       id: 'tv',
       name: 'Televisores',
       description: 'Reparación de Smart TV y televisores convencionales.',
       icon: <FaTv className="w-8 h-8" />,
-      commonIssues: ['No enciende', 'Sin imagen', 'Sin sonido', 'Problemas de WiFi', 'Control remoto'],
-      basePrice: 'Desde $40.000'
+      commonIssues: ['No enciende', 'Sin imagen', 'Sin sonido', 'Problemas de WiFi', 'Control remoto']
     },
     {
       id: 'consola',
       name: 'Consolas de Videojuegos',
       description: 'Reparación de PlayStation, Xbox y Nintendo.',
       icon: <FaGamepad className="w-8 h-8" />,
-      commonIssues: ['No lee discos', 'Sobrecalentamiento', 'Control no funciona', 'Problemas de WiFi', 'No enciende'],
-      basePrice: 'Desde $45.000'
+      commonIssues: ['No lee discos', 'Sobrecalentamiento', 'Control no funciona', 'Problemas de WiFi', 'No enciende']
     },
     {
       id: 'impresora',
       name: 'Impresoras',
       description: 'Reparación y mantenimiento de impresoras láser e inyección.',
       icon: <FaPrint className="w-8 h-8" />,
-      commonIssues: ['No imprime', 'Atascos de papel', 'Problemas de conectividad', 'Cartuchos defectuosos', 'Calibración'],
-      basePrice: 'Desde $20.000'
+      commonIssues: ['No imprime', 'Atascos de papel', 'Problemas de conectividad', 'Cartuchos defectuosos', 'Calibración']
     }
   ];
 
@@ -208,9 +201,6 @@ const ReparacionesElectronicasPage: React.FC = () => {
                     </div>
                     <h3 className="text-xl font-bold text-white mb-2">{device.name}</h3>
                     <p className="text-gray-300 text-sm mb-4">{device.description}</p>
-                    <div className="text-mostaza font-semibold text-lg mb-4">
-                      {device.basePrice}
-                    </div>
                   </div>
 
                   <div className="mb-6">

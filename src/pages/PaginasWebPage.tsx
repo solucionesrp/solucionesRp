@@ -13,7 +13,6 @@ interface WebFormData {
   businessType: string;
   websiteType: string;
   features: string[];
-  budget: string;
   description: string;
 }
 
@@ -27,7 +26,6 @@ const PaginasWebPage: React.FC = () => {
     businessType: '',
     websiteType: '',
     features: [],
-    budget: '',
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,32 +37,28 @@ const PaginasWebPage: React.FC = () => {
       name: 'Landing Page',
       description: 'Página de aterrizaje para capturar leads y promocionar productos.',
       icon: <FaGlobe className="w-8 h-8" />,
-      features: ['Diseño atractivo', 'Formulario de contacto', 'Optimización SEO', 'Responsive design'],
-      basePrice: 'Desde $300.000'
+      features: ['Diseño atractivo', 'Formulario de contacto', 'Optimización SEO', 'Responsive design']
     },
     {
       id: 'business',
       name: 'Sitio Web Empresarial',
       description: 'Página web completa para mostrar tu empresa y servicios.',
       icon: <FaGlobe className="w-8 h-8" />,
-      features: ['Múltiples páginas', 'Panel administrativo', 'Blog integrado', 'SEO optimizado'],
-      basePrice: 'Desde $500.000'
+      features: ['Múltiples páginas', 'Panel administrativo', 'Blog integrado', 'SEO optimizado']
     },
     {
       id: 'ecommerce',
       name: 'Tienda Online',
       description: 'Plataforma completa para vender productos online.',
       icon: <FaShoppingCart className="w-8 h-8" />,
-      features: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos', 'Panel de gestión'],
-      basePrice: 'Desde $800.000'
+      features: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos', 'Panel de gestión']
     },
     {
       id: 'portfolio',
       name: 'Portfolio Profesional',
       description: 'Sitio web para mostrar tu trabajo y servicios profesionales.',
       icon: <FaUsers className="w-8 h-8" />,
-      features: ['Galería de proyectos', 'Testimonios', 'Formulario de contacto', 'Diseño personalizado'],
-      basePrice: 'Desde $400.000'
+      features: ['Galería de proyectos', 'Testimonios', 'Formulario de contacto', 'Diseño personalizado']
     }
   ];
 
@@ -141,7 +135,6 @@ const PaginasWebPage: React.FC = () => {
         businessType: '',
         websiteType: '',
         features: [],
-        budget: '',
         description: ''
       });
       setShowForm(false);
@@ -268,7 +261,6 @@ const PaginasWebPage: React.FC = () => {
                     <div className="text-mostaza">{website.icon}</div>
                     <div>
                       <h3 className="text-2xl font-bold">{website.name}</h3>
-                      <p className="text-azul font-semibold">{website.basePrice}</p>
                     </div>
                   </div>
                   <p className="text-gray-300 mb-4">{website.description}</p>
@@ -450,22 +442,7 @@ const PaginasWebPage: React.FC = () => {
                     </select>
                   </div>
                   
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Presupuesto aproximado *</label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-mostaza"
-                    >
-                      <option value="">Selecciona...</option>
-                      <option value="300-500">$300.000 - $500.000</option>
-                      <option value="500-800">$500.000 - $800.000</option>
-                      <option value="800-1200">$800.000 - $1.200.000</option>
-                      <option value="1200+">Más de $1.200.000</option>
-                    </select>
-                  </div>
+
                 </div>
                 
                 <div>

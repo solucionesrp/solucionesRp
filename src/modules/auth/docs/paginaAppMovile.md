@@ -10,8 +10,6 @@ Checklist
 
 ✅ Listar beneficios (visibilidad, fidelización, automatización, etc.)
 
-✅ Mostrar precios base o rangos estimados por tipo de app
-
 ✅ Agregar formulario de solicitud de app móvil
 
 ✅ Validar campos: nombre, rubro, tipo de app deseada, contacto

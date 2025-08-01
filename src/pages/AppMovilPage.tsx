@@ -34,32 +34,28 @@ const AppMovilPage: React.FC = () => {
       name: 'E-commerce',
       description: 'Tiendas online con carrito de compras, pagos y gestión de inventario.',
       icon: <FaMobile className="w-8 h-8" />,
-      features: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos', 'Panel administrativo'],
-      basePrice: 'Desde $2.500.000'
+      features: ['Catálogo de productos', 'Carrito de compras', 'Pasarela de pagos', 'Panel administrativo']
     },
     {
       id: 'delivery',
       name: 'Delivery',
       description: 'Aplicaciones para restaurantes, delivery de comida y servicios.',
       icon: <FaMobile className="w-8 h-8" />,
-      features: ['Geolocalización', 'Seguimiento en tiempo real', 'Sistema de pedidos', 'Notificaciones push'],
-      basePrice: 'Desde $3.000.000'
+      features: ['Geolocalización', 'Seguimiento en tiempo real', 'Sistema de pedidos', 'Notificaciones push']
     },
     {
       id: 'social',
       name: 'Red Social',
       description: 'Plataformas sociales con perfiles, mensajería y contenido.',
       icon: <FaMobile className="w-8 h-8" />,
-      features: ['Perfiles de usuario', 'Feed de contenido', 'Mensajería', 'Notificaciones'],
-      basePrice: 'Desde $4.000.000'
+      features: ['Perfiles de usuario', 'Feed de contenido', 'Mensajería', 'Notificaciones']
     },
     {
       id: 'business',
       name: 'Negocio',
       description: 'Apps para gestión interna, CRM y automatización de procesos.',
       icon: <FaMobile className="w-8 h-8" />,
-      features: ['Gestión de clientes', 'Reportes y analytics', 'Sincronización con sistemas', 'Panel de control'],
-      basePrice: 'Desde $2.000.000'
+      features: ['Gestión de clientes', 'Reportes y analytics', 'Sincronización con sistemas', 'Panel de control']
     }
   ];
 
@@ -240,7 +236,6 @@ const AppMovilPage: React.FC = () => {
                     <div className="text-azul">{app.icon}</div>
                     <div>
                       <h3 className="text-2xl font-bold">{app.name}</h3>
-                      <p className="text-mostaza font-semibold">{app.basePrice}</p>
                     </div>
                   </div>
                   <p className="text-gray-300 mb-4">{app.description}</p>
